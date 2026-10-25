@@ -111,6 +111,32 @@ function App() {
     cadeira.nome.toLowerCase().includes(termoBusca.toLowerCase())
   )
 
+  useEffect(() => {
+    let larguraAnterior = window.innerWidth
+
+    const atualizarAltura = () => {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`)
+    }
+
+    const aoRedimensionar = () => {
+      // só atualiza se a largura mudou (girar a tela); ignora as barras do Safari aparecendo e sumindo
+      if (window.innerWidth !== larguraAnterior) {
+        larguraAnterior = window.innerWidth
+        atualizarAltura()
+      }
+    }
+
+    const aoGirar = () => setTimeout(atualizarAltura, 300)
+
+    atualizarAltura()
+    window.addEventListener('resize', aoRedimensionar)
+    window.addEventListener('orientationchange', aoGirar)
+    return () => {
+      window.removeEventListener('resize', aoRedimensionar)
+      window.removeEventListener('orientationchange', aoGirar)
+    }
+  }, [])
+
   const cadeirasDaCategoriaAtual = cadeiras.filter((cadeira) => cadeira.categoria === categoriaAtual)
 
   const irParaCategorias = () => rolarParaCategorias(true)

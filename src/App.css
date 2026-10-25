@@ -5,6 +5,7 @@
   --cor-verde: #318155;
   --cor-verde-escuro: #17532f;
   --cor-card-fundo: #dbfeea;
+  --vh: 1svh;
 }
 
 body {
@@ -402,7 +403,7 @@ h1 {
   box-sizing: border-box;
   margin: 0;
   padding: 0.6rem 1rem 0.6rem 2.6rem;
-  font-size: 1rem;
+  font-size: max(16px, 1rem);
   border-radius: 8px;
   border: 2px solid var(--cor-verde);
   background-color: white;
@@ -785,7 +786,7 @@ input[type="text"] {
 
   /* --- Escala geral: tudo em rem acompanha a tela --- */
   html:root {
-    font-size: clamp(12px, min(4.4444vw, 2.1622svh), 20px);
+    font-size: clamp(12px, min(4.4444vw, calc(var(--vh) * 2.1622)), 20px);
   }
 
   /* --- Topo --- */
@@ -814,8 +815,7 @@ input[type="text"] {
   /* --- Primeira tela: carrossel + faixa + sobre nós = altura da tela --- */
   .carrossel {
     aspect-ratio: auto;
-    height: 36.486vh;
-    height: 36.486svh;
+    height: calc(var(--vh) * 36.486);
   }
 
   .carrossel-seta {
@@ -830,16 +830,14 @@ input[type="text"] {
   }
 
   .faixa-imagem {
-    min-height: 10.811vh;
-    min-height: 10.811svh;
+    min-height: calc(var(--vh) * 10.811);
     padding: 0.75rem 1rem;
   }
 
 
   .sobre-nos {
     aspect-ratio: auto;
-    min-height: calc(52.703vh + 2px);
-    min-height: calc(52.703svh + 2px);
+    min-height: calc(var(--vh) * 52.703 + 2px);
     padding: 3rem 1.5rem;
   }
 
@@ -870,8 +868,7 @@ input[type="text"] {
   .grade-categorias {
     padding: 0 1rem;
     gap: 1rem;
-    min-height: calc(100vh - 9.5rem);
-    min-height: calc(100svh - 9.5rem);
+    min-height: calc(var(--vh) * 100 - 9.5rem);
   }
 
   .tile-imagem {
