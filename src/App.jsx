@@ -349,7 +349,7 @@ function App() {
         </div>
       )}
 
-            <section className="cta-contato">
+      <section className="cta-contato">
         <div className='cta-contato-texto'>
           <p>Entre em contato e solicite seu orçamento!</p>
           <p className='cta-contato-subtitulo'>Cadeiras Carvalho - 32.369.539/0001-09</p>
@@ -374,7 +374,7 @@ function App() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="botao-social"
+            className="botao-social botao-social-instagram"
             aria-label="Instagram da Cadeiras Carvalho"
           >
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -388,7 +388,7 @@ function App() {
             href={FACEBOOK_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="botao-social"
+            className="botao-social botao-social-facebook"
             aria-label="Facebook da Cadeiras Carvalho"
           >
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

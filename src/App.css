@@ -751,15 +751,26 @@ input[type="text"] {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--cor-card-fundo);
-  color: var(--cor-verde-escuro);
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  color: #ffffff;
+  transition: filter 0.2s ease, transform 0.15s ease;
 }
 
 .botao-social:hover {
-  background-color: var(--cor-verde);
-  color: var(--cor-texto-claro);
+  filter: brightness(1.1);
   transform: translateY(-2px);
+}
+
+.botao-social-instagram {
+  background: radial-gradient(circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%);
+}
+
+.botao-social-facebook {
+  background-color: #1877f2;
 }
 
 .rodape {
